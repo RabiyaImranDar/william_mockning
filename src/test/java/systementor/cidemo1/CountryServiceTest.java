@@ -45,4 +45,17 @@ public class CountryServiceTest {
 
         assertEquals(List.of("English", "Latvian"), result);
     }
+
+    @Test
+    void isHighlyPopulatedReturnsFalseWhenPopulationIsBelowTenMillion(){
+        logger.info("Starting test isHighlyPopulatedReturnsFalseWhenPopulationIsBelowTenMillion ");
+        when (countryApiClient.fetchCountryByName("Latvia")).thenReturn(LATVIA);
+
+        var result = countryService.isHighlyPopulated("Latvia");
+        logger.info("Result from isHighlyPopulated: " + result);
+
+        assertFalse(result);
+
+
+    }
 }
