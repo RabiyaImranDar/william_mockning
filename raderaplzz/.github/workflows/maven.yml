@@ -21,7 +21,7 @@ jobs:
           cache: maven
 
       - name: Build & Test
-        run: mvn -B -Dtest=CalcultorTest test
+        run: mvn -B -Dtest=CountryServiceTest test
 
       - name: Test Summary
         uses: test-summary/action@v2
